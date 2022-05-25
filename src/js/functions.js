@@ -93,10 +93,20 @@ function crearHtml(){
     if (citas.length > 0){
         
         citas.forEach(citaObj => {
+            
+            // ID aleatorio para capturar los elementos de lista que se generan dinamicamente.  
+            let idRandom        = 'li-' + Math.floor(Math.random() * 100000);
+
+            // Creación del botón para eliminar las citas. 
+            let btnEliminar     = document.createElement('button');
+            btnEliminar.classList.add('btn-close', 'float-end');
+            btnEliminar.onclick = () => {
+                borrarCita(id);
+            };         
     
             const {cita, autor, id} = citaObj;
             const citaHtml = `
-            <li class="list-group-item d-flex justify-content-between lh-sm mb-2">
+            <li id="${idRandom}" class="list-group-item d-flex justify-content-between lh-sm mb-2">
                 <div>
                     <blockquote class="blockquote">
                         <p>${cita}</p>
@@ -105,17 +115,18 @@ function crearHtml(){
                         <cite title="Source Title">${autor}</cite>
                     </figcaption>
                 </div>
-                <button onclick="borrarCita(${id})" type="button" class="btn-close float-end" data-bs-toggle="tooltip" title="Eliminar"></button>
             </li>`;
 
-            const contenedorCita     = document.createElement('div');
+            let contenedorCita       = document.createElement('div');
             contenedorCita.innerHTML = citaHtml;
-            
-            listaCitas.appendChild(contenedorCita);            
+            listaCitas.appendChild(contenedorCita);     
+            let elementoLista        = document.querySelector(`#${idRandom}`);
+            elementoLista.appendChild(btnEliminar);
             
         });
     }
     
+    // Contador para la cantidad de citas. 
     contador = citas.length;
     contadorCitas.innerText = contador;
 
