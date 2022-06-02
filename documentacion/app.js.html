@@ -83,7 +83,7 @@
   <body>
 
     <nav class="navbar" id="navbar">
-      <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">Guardar citas célebres</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><ul><li class="menu-li"><a href='https://github.com/franj1748/guardar-citas.git' class=' menu-link' id='' target='_blank'>Proyecto en GitHub</a></li><li class="menu-li"><a href='https://github.com/franj1748/configuracion-jsdoc.git' class=' menu-link' id='' target='_blank'>Archivos de configuración para JSDoc</a></li></ul><div class="accordion collapsed" id="3687368" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=2437580><div class="accordion-heading child"><a href="module-Funciones.html">Funciones</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Funciones.html#~agregarCita">agregarCita</a></li><li data-type='method'><a href="module-Funciones.html#~borrarCita">borrarCita</a></li><li data-type='method'><a href="module-Funciones.html#~cargarLocalStorage">cargarLocalStorage</a></li><li data-type='method'><a href="module-Funciones.html#~crearHtml">crearHtml</a></li><li data-type='method'><a href="module-Funciones.html#~limpiarHtml">limpiarHtml</a></li><li data-type='method'><a href="module-Funciones.html#~validarCampos">validarCampos</a></li></ul></li></ul> </div><div class="accordion collapsed" id="8564527" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=""><a href="global.html#btnAgregar">btnAgregar</a></li><li class="accordion-list" id=""><a href="global.html#citas">citas</a></li><li class="accordion-list" id=""><a href="global.html#contador">contador</a></li><li class="accordion-list" id=""><a href="global.html#contadorCitas">contadorCitas</a></li><li class="accordion-list" id=""><a href="global.html#inputAutor">inputAutor</a></li><li class="accordion-list" id=""><a href="global.html#inputCita">inputCita</a></li><li class="accordion-list" id=""><a href="global.html#listaCitas">listaCitas</a></li><li class="accordion-list" id=""><a href="global.html#validarCita">validarCita</a></li></ul> </div>
+      <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">Guardar citas célebres</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><ul><li class="menu-li"><a href='https://github.com/franj1748/guardar-citas.git' class=' menu-link' id='' target='_blank'>Proyecto en GitHub</a></li><li class="menu-li"><a href='https://github.com/franj1748/configuracion-jsdoc.git' class=' menu-link' id='' target='_blank'>Archivos de configuración para JSDoc</a></li></ul><div class="accordion collapsed" id="8131314" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=6764951><div class="accordion-heading child"><a href="module-Funciones.html">Funciones</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Funciones.html#~agregarCita">agregarCita</a></li><li data-type='method'><a href="module-Funciones.html#~borrarCita">borrarCita</a></li><li data-type='method'><a href="module-Funciones.html#~cargarLocalStorage">cargarLocalStorage</a></li><li data-type='method'><a href="module-Funciones.html#~crearHtml">crearHtml</a></li><li data-type='method'><a href="module-Funciones.html#~limpiarHtml">limpiarHtml</a></li><li data-type='method'><a href="module-Funciones.html#~validacion">validacion</a></li><li data-type='method'><a href="module-Funciones.html#~validarCampo">validarCampo</a></li></ul></li></ul> </div><div class="accordion collapsed" id="3049633" > <h3 class="accordion-heading">Global<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=""><a href="global.html#btnAgregar">btnAgregar</a></li><li class="accordion-list" id=""><a href="global.html#campos">campos</a></li><li class="accordion-list" id=""><a href="global.html#citas">citas</a></li><li class="accordion-list" id=""><a href="global.html#contador">contador</a></li><li class="accordion-list" id=""><a href="global.html#contadorCitas">contadorCitas</a></li><li class="accordion-list" id=""><a href="global.html#expresiones">expresiones</a></li><li class="accordion-list" id=""><a href="global.html#inputAutor">inputAutor</a></li><li class="accordion-list" id=""><a href="global.html#inputCita">inputCita</a></li><li class="accordion-list" id=""><a href="global.html#listaCitas">listaCitas</a></li><li class="accordion-list" id=""><a href="global.html#validarCita">validarCita</a></li></ul> </div>
       
         <div class="navbar-resize" id="navbar-resize">
           <div class="resize-dots-container">
@@ -159,6 +159,24 @@ let citas         = [];
  */
 let contador = 0;
 
+/**
+ * Contiene las expresiones regulares contra las que se comprobaran los valores de cada input. 
+ * @type {Object}
+ */
+const expresiones = {
+	cita  : /^[a-zA-ZÀ-ÿ\s\d\_\-]{1,160}$/, // Letras y números,  pueden llevar acentos. De 1 a 160 caracteres. 
+	autor : /^[a-zA-ZÀ-ÿ\s\d\_\-]{1,60}$/ // Letras y números, pueden llevar acentos. De 1 a 60 caracteres.
+}
+
+/**
+ * Contiene una declaración booleana para cada campo de formulario, que cambiará a true si el campo pasa la validación correctamente.
+ * @type {Object} 
+ */
+ const campos = {
+	cita  : false,
+	autor : false
+}
+
 // Listeners 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -169,14 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     crearHtml();
     
-    // Inicia características de Bootstrap: tooltip.
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-    
 });
 
-inputCita.addEventListener('input', validarCampos);
-inputAutor.addEventListener('input', validarCampos);
+inputCita.addEventListener('keyup', validacion);
+inputAutor.addEventListener('keyup', validacion);
+inputCita.addEventListener('blur', validacion);
+inputAutor.addEventListener('blur', validacion);
 btnAgregar.addEventListener('click', agregarCita);
 </code></pre>
         </article>
@@ -203,7 +219,7 @@ btnAgregar.addEventListener('click', agregarCita);
       <script src="scripts/search.js"></script>
       <script src="scripts/third-party/fuse.js"></script>
       <script>
-        var list = [{"title":"Funciones","link":"<a href=\"module-Funciones.html\">Funciones</a>"},{"title":"module:Funciones~agregarCita","link":"<a href=\"module-Funciones.html#~agregarCita\">module:Funciones~agregarCita &rtrif; undefined</a>"},{"title":"module:Funciones~borrarCita","link":"<a href=\"module-Funciones.html#~borrarCita\">module:Funciones~borrarCita &rtrif; undefined</a>"},{"title":"module:Funciones~cargarLocalStorage","link":"<a href=\"module-Funciones.html#~cargarLocalStorage\">module:Funciones~cargarLocalStorage &rtrif; undefined</a>"},{"title":"module:Funciones~crearHtml","link":"<a href=\"module-Funciones.html#~crearHtml\">module:Funciones~crearHtml &rtrif; undefined</a>"},{"title":"module:Funciones~limpiarHtml","link":"<a href=\"module-Funciones.html#~limpiarHtml\">module:Funciones~limpiarHtml &rtrif; undefined</a>"},{"title":"module:Funciones~validarCampos","link":"<a href=\"module-Funciones.html#~validarCampos\">module:Funciones~validarCampos &rtrif; undefined</a>"},{"title":"btnAgregar","link":"<a href=\"global.html#btnAgregar\">btnAgregar</a>"},{"title":"citas","link":"<a href=\"global.html#citas\">citas</a>"},{"title":"contador","link":"<a href=\"global.html#contador\">contador</a>"},{"title":"contadorCitas","link":"<a href=\"global.html#contadorCitas\">contadorCitas</a>"},{"title":"inputAutor","link":"<a href=\"global.html#inputAutor\">inputAutor</a>"},{"title":"inputCita","link":"<a href=\"global.html#inputCita\">inputCita</a>"},{"title":"listaCitas","link":"<a href=\"global.html#listaCitas\">listaCitas</a>"},{"title":"validarCita","link":"<a href=\"global.html#validarCita\">validarCita</a>"}];
+        var list = [{"title":"Funciones","link":"<a href=\"module-Funciones.html\">Funciones</a>"},{"title":"module:Funciones~agregarCita","link":"<a href=\"module-Funciones.html#~agregarCita\">module:Funciones~agregarCita &rtrif; undefined</a>"},{"title":"module:Funciones~borrarCita","link":"<a href=\"module-Funciones.html#~borrarCita\">module:Funciones~borrarCita &rtrif; undefined</a>"},{"title":"module:Funciones~cargarLocalStorage","link":"<a href=\"module-Funciones.html#~cargarLocalStorage\">module:Funciones~cargarLocalStorage &rtrif; undefined</a>"},{"title":"module:Funciones~crearHtml","link":"<a href=\"module-Funciones.html#~crearHtml\">module:Funciones~crearHtml &rtrif; undefined</a>"},{"title":"module:Funciones~limpiarHtml","link":"<a href=\"module-Funciones.html#~limpiarHtml\">module:Funciones~limpiarHtml &rtrif; undefined</a>"},{"title":"module:Funciones~validacion","link":"<a href=\"module-Funciones.html#~validacion\">module:Funciones~validacion &rtrif; undefined</a>"},{"title":"module:Funciones~validarCampo","link":"<a href=\"module-Funciones.html#~validarCampo\">module:Funciones~validarCampo &rtrif; undefined</a>"},{"title":"btnAgregar","link":"<a href=\"global.html#btnAgregar\">btnAgregar</a>"},{"title":"campos","link":"<a href=\"global.html#campos\">campos</a>"},{"title":"citas","link":"<a href=\"global.html#citas\">citas</a>"},{"title":"contador","link":"<a href=\"global.html#contador\">contador</a>"},{"title":"contadorCitas","link":"<a href=\"global.html#contadorCitas\">contadorCitas</a>"},{"title":"expresiones","link":"<a href=\"global.html#expresiones\">expresiones</a>"},{"title":"inputAutor","link":"<a href=\"global.html#inputAutor\">inputAutor</a>"},{"title":"inputCita","link":"<a href=\"global.html#inputCita\">inputCita</a>"},{"title":"listaCitas","link":"<a href=\"global.html#listaCitas\">listaCitas</a>"},{"title":"validarCita","link":"<a href=\"global.html#validarCita\">validarCita</a>"}];
         var options = 
           setupSearch(list, options)
       </script>

@@ -40,6 +40,24 @@ let citas         = [];
  */
 let contador = 0;
 
+/**
+ * Contiene las expresiones regulares contra las que se comprobaran los valores de cada input. 
+ * @type {Object}
+ */
+const expresiones = {
+	cita  : /^[a-zA-ZÀ-ÿ\s\d\_\-]{1,160}$/, // Letras y números,  pueden llevar acentos. De 1 a 160 caracteres. 
+	autor : /^[a-zA-ZÀ-ÿ\s\d\_\-]{1,60}$/ // Letras y números, pueden llevar acentos. De 1 a 60 caracteres.
+}
+
+/**
+ * Contiene una declaración booleana para cada campo de formulario, que cambiará a true si el campo pasa la validación correctamente.
+ * @type {Object} 
+ */
+ const campos = {
+	cita  : false,
+	autor : false
+}
+
 // Listeners 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -50,12 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     crearHtml();
     
-    // Inicia características de Bootstrap: tooltip.
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-    
 });
 
-inputCita.addEventListener('input', validarCampos);
-inputAutor.addEventListener('input', validarCampos);
+inputCita.addEventListener('keyup', validacion);
+inputAutor.addEventListener('keyup', validacion);
+inputCita.addEventListener('blur', validacion);
+inputAutor.addEventListener('blur', validacion);
 btnAgregar.addEventListener('click', agregarCita);

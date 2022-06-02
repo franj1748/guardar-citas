@@ -27,19 +27,16 @@
                 <h4 class="mb-3">Guarde las citas de sus autores preferidos</h4>
                 <form class="needs-validation" novalidate>
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Ingresa tu cita aquí" id="cita"></textarea>
+                        <textarea class="form-control" name="cita" placeholder="Ingresa tu cita aquí" id="cita"></textarea>
                         <div class="invalid-feedback">
-                            Máximo 160 caracteres.
-                        </div>     
-                        <div id="validarCita" class="hide">
-                            Este campo no puede estar vacío.
-                        </div>                 
+                            Debe contener letras, números y guiones. Máximo 160 caracteres. 
+                        </div>                
                         <label for="floatingTextarea">Agregar Cita</label>
                     </div>
                     <div class="form-floating">
-                        <input id="autor" class="form-control mt-3" type="text" placeholder="Ingresa el autor" aria-label="nombreAutor">
+                        <input id="autor" class="form-control mt-3" type="text" name="autor" placeholder="Ingresa el autor" aria-label="nombreAutor">
                         <div class="invalid-feedback">
-                            Este campo no puede estar vacío.
+                            Debe contener letras, números y guiones. Máximo 60 caracteres. 
                         </div> 
                         <label for="floatingTextarea">Autor</label>
                     </div>

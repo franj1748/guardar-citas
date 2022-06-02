@@ -8,52 +8,47 @@
  * Valida los campos del formulario asegurándose de que ninguno esté vacío y de que el texto de la cita no tenga más de 160 caractres.  
  * @param {Event} e El evento que se desencadena. 
  */
-function validarCampos(e){
+function validacion(e){
 
-    if (e.target.type === 'textarea'){
+    const {cita, autor} = expresiones;
 
-        // Validar que el campo de cita no tenga más de 160 caracteres. 
-        if (e.target.value.length > 160){
-            e.target.classList.add('is-invalid');
-            validarCita.classList.add('hide');
-            btnAgregar.disabled = true; 
-        }else{
-
-            e.target.classList.remove('is-invalid');
-            if (inputAutor.value !== ''){
-
-                btnAgregar.disabled = false;
-            }
-        }
-
-        // Validar que el campo no este vacío. 
-        if (e.target.value.length > 0){
-            validarCita.classList.add('hide');
-            e.target.classList.remove('border-danger');
-        } else {
-            e.target.classList.add('border-danger');
-            validarCita.classList.remove('hide');
-            validarCita.classList.add('text-danger');
-            validarCita.style.fontSize = '.875em';
-            btnAgregar.disabled = true;  
-        }
+    switch (e.target.name) {
+        case "cita":
+            validarCampo(cita, e.target, 'cita');
+        break;
+        case "autor":
+            validarCampo(autor, e.target, 'autor');
+        break;
+    }
         
-    }else if (e.target.type === 'text'){
+}
 
-        if (e.target.value.length > 0){
-            e.target.classList.remove('is-invalid');
-        } else {
-            e.target.classList.add('is-invalid');
-            btnAgregar.disabled = true;  
-        }
+/**
+ * Valida cada campo de formulario contra su respectiva expresión regular. 
+ * @param {RegExp} expresion Expresion regular para validar cada campo del formulario.
+ * @param {HTMLElement} input Elemento de formulario donde se desencadena el evento. 
+ * @param {String} campo Nombre del campo del formulario a evaluar. 
+ */
+function validarCampo(expresion, input, campo){
+
+    if (input.value === '' || !expresion.test(input.value)){
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid'); 
+        campos[campo] = false;
+    }else{
+        input.classList.add('is-valid');
+        input.classList.remove('is-invalid');
+        campos[campo] = true;
+    }
+    
+    const {cita, autor} = campos; 
+
+    if (cita && autor){
+        btnAgregar.disabled = false; 
+    }else{
+        btnAgregar.disabled = true; 
     }
 
-    
-    if (inputCita.value !== '' && inputAutor.value !== '' && inputCita.value.length <= 160){
-    
-        btnAgregar.disabled = false;    
-    }
-    
 }
 
 /**
@@ -80,6 +75,8 @@ function agregarCita(e){
     inputCita.value = '';
     inputAutor.value = '';
     btnAgregar.disabled = true;  
+    inputCita.classList.remove('is-valid');
+    inputAutor.classList.remove('is-valid');
     
 }
 
